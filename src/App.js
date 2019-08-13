@@ -1,7 +1,7 @@
 import React from "react";
 import { ApolloProvider } from "@apollo/react-hooks";
 import client from "./apolloClient";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import Detail from "./Detail";
 import "./App.css";
@@ -19,8 +19,8 @@ function App() {
                             <FontAwesomeIcon icon={faVideo} /> Graphql Movies
                         </Link>
                     </Header>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/detail/:movie_id" component={Detail} />
+                    <Route exact={true} path={"/"} component={Home} />
+                    <Route path={"/detail/:movie_id"} component={Detail} />
                 </Container>
             </Router>
         </ApolloProvider>
